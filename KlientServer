@@ -1,0 +1,12 @@
+Server potřebuje vědět:
+Všechna volná místa
+Všechna rezervovaná místa(zjistí a pošle)
+Lokace všech stojanů(databáze)
+GPS lokace kol(?)
+Stojan potřebuje vědět:
+Svoje rezervovaná místa
+Svoje volná místa(zjistí a pošle)
+Heslo na server
+Stojan pozná vyjmutí/zandání kola pomocí stisku tlačítka a okamžitě pošle serveru
+Server zjistí rezervace z webu a okamžitě pošle stojanu
+Server jednou za den(?) Posílá dotaz všem stojanům a očekává potvrzení
