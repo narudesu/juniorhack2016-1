@@ -8,11 +8,18 @@
 TFT TFTscreen = TFT(CS, DC, RESET);
 
 char* id = "1";
-int occupied[] = {0,1,2,0,1};
+int occupied[] = {1,1,1,1,1};
 bool rewriteImpuls = false;
 bool connected = false;
 
+#define LEND_BUTTON 2
+bool lend_button_pressed = false;
+
+#define RETURN_BUTTON 12
+bool return_button_pressed = false;
+
 void setup() {
+  Serial.begin(9600);
   TFTscreen.begin();
   TFTscreen.background(0, 0, 0);
   TFTscreen.stroke(255, 255, 255);
@@ -24,11 +31,48 @@ void setup() {
   for(int i = 3; i <= 7; i++){
     pinMode(i, INPUT);
   }
+  pinMode(2, INPUT);
+  pinMode(12, INPUT);
   statusBar();
   connection();
 }
 
 void loop() {
+  //Serial.println(return_button_pressed);
+  if(digitalRead(LEND_BUTTON) == HIGH){
+    lend_button_pressed = true;
+  }
+  if(digitalRead(RETURN_BUTTON) == HIGH){
+    return_button_pressed = true;
+  }
+  if(digitalRead(LEND_BUTTON) == LOW && lend_button_pressed == true){
+    if(mamVolneKolo() != -1){
+      occupied[mamVolneKolo()] = 0;
+      clearStatusLine();
+      //SEND TO WEB THAT I'VE BORROWED A BIKE FROM SLOT mamVolneKolo.
+    }
+    else{
+      clearStatusLine();
+      TFTscreen.text("Zadna dalsi volna kola.",0,25);
+    }
+    //Serial.println("BU");
+    lend_button_pressed = false;
+    rewriteImpuls = true;
+  }
+  if(digitalRead(RETURN_BUTTON) == LOW && return_button_pressed == true){
+    if(mamVolnyStojan() != -1){
+      clearStatusLine();
+      occupied[mamVolnyStojan()] = 1;
+      //SEND TO WEB THAT I'VE RECIEVED A BIKE TO SLOT mamVolnyStojan.
+    }
+    else{
+  clearStatusLine();
+      TFTscreen.text("Zadna dalsi volna mista.",0,25);
+    }
+    //Serial.println("BU");
+    return_button_pressed = false;
+    rewriteImpuls = true;
+  }
   checkConnection();
   //checkPositions();
   if(rewriteImpuls){
@@ -38,10 +82,10 @@ void loop() {
 }
 void statusBar(){
   for(int i = 0; i < 5; i++){
-    if(occupied[i] == 0){
+    if(occupied[i] == 1){
       TFTscreen.fill(0,255,0);
     }
-    else if(occupied[i] == 1){
+    else if(occupied[i] == 0){
       TFTscreen.fill(0,0,255);
     }
     else if(occupied[i] == 2){
@@ -63,7 +107,7 @@ void connection(){
 }
 void checkPositions(){
   for(int i = 0; i < 5; i++){
-    bool prev = occupied[i];
+    int prev = occupied[i];
     if(digitalRead(i+3) == HIGH){
       occupied[i] = true;
     }
@@ -81,4 +125,3 @@ void checkConnection(){
     rewriteImpuls = true;
   }
 }
-
