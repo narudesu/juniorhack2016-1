@@ -23,9 +23,69 @@ app.get('/docks', (req, res) => {
   })
 })
 
+let sim = {
+  'occ': '01100',
+  id: '2',
+  sct: 'AHOJ'
+}
+
+function parseInit(raw) {
+  // console.log('parsing raw', raw)
+  let slots = raw.occ.split('').map(x => {
+    return {state: (x === '1') ? 'available' : 'empty'}
+  })
+  let answer = {}
+  answer.dockID = raw.id
+  answer.secret = raw.sct
+  answer.slots = slots
+  return answer
+}
+setTimeout(function() {
+  authSender('2', 'AHOJ')
+    .then(() => {console.log('authed')})
+    .catch(() => {console.log('invalid')})
+}, 1000)
+
+function authSender(dockID, secret) {
+  return new Promise((resolve, reject) => {
+    collection.findOne({dockID}, {secret: true}, (err, doc) => {
+      if (doc == null) {
+        reject()
+        return
+      }
+      if (secret === doc.secret) resolve()
+      else reject()
+    })
+  })
+}
+
+function updateSlots(dockID, slots) {
+  console.log(slots)
+}
+
+let parsed = parseInit(sim)
+authSender(parsed.dockID, parsed.secret)
+  .then(x => {
+    res.send('Hellou')
+    updateSlots(parsed.slots)
+  })
+  .catch(x => {
+    res.send('You are evil')
+  })
+
+// console.log(parseInit(sim))
+
 app.get('/init', (req, res) => {
-  console.log('got arduino msg', req.params)
-  res.send('Hellou')
+  console.log('got arduino msg', req.query)
+  let parsed = parseInit(req.query)
+  authSender(parsed.dockID, parsed.secret)
+    .then(x => {
+      res.send('Hellou')
+      updateSlots(parsed.slots)
+    })
+    .catch(x => {
+      res.send('You are evil')
+    })
 })
 
 app.get('/inid', (req, res) => {
