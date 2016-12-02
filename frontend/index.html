@@ -13,14 +13,20 @@
     #bike-finder {
       background-color: #ca00ff;
       min-height: 200px;
-      transition: transform: 2s;
+      transition: all 1s ease-in-out;
     }
     #bike-finder-map {
       height: 200px;
+      width: 100%;
     }
 
     .collapsed {
       transform: scaleY(0);
+    }
+
+    .absrender {
+      position: absolute;
+
     }
     </style>
   </head>
@@ -28,9 +34,10 @@
     <section id="mapsection">
       <h2>Get kolo</h2>
       <button id="btn-kolo">Kolo</button>
-      <div id="bike-finder" class="collapsed">
+      <div id="bike-finder" class="collapsed absrender">
         <div id="bike-finder-map"></div>
       </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos minima voluptates accusantium praesentium molestias porro vero vitae, laboriosam eligendi?</p>
     </section>
     <script src="bundle.js" charset="utf-8"></script>
     <script async defer
