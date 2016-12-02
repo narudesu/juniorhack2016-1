@@ -3,10 +3,24 @@ Všechna volná místa
 Všechna rezervovaná místa(zjistí a pošle)
 Lokace všech stojanů(databáze)
 GPS lokace kol(?)
+
 Stojan potřebuje vědět:
 Svoje rezervovaná místa
 Svoje volná místa(zjistí a pošle)
 Heslo na server
-Stojan pozná vyjmutí/zandání kola pomocí stisku tlačítka a okamžitě pošle serveru
+
+Případně: 
+Kolo musí vědět:
+Svojí lokaci(zjistí si pomocí GPS a pošle)
+Heslo na server
+Kolo posílá serveru každou minutu svojí GPS lokaci(s heslem)
+
+
+Stojan pozná vyjmutí/zandání kola pomocí stisku tlačítka a okamžitě pošle serveru spolu s heslem, server zkontroluje heslo a uloží.
 Server zjistí rezervace z webu a okamžitě pošle stojanu
-Server jednou za den(?) Posílá dotaz všem stojanům a očekává potvrzení
+Server jednou za den(?) posílá dotaz všem stojanům a očekává potvrzení, poté případně pošle nové heslo(zašifrované)
+
+Když skončíme dříve:
+Stojan zjišťuje a posílá: Hluk, emise
+Server si pamatuje a zobrazuje uživatelům: Hluk a emise u každého stojanu
+Bluetooth protiztrátové zařízení
