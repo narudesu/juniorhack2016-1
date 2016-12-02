@@ -4,6 +4,7 @@ let current_location = {lat: 49.2, lng: 16.63} // TODO: implement getting locati
 let init_done = false
 let map
 let collapsed = true
+let current_location_marker
 
 function handlePosition(pos) {
   console.log('got pos', pos)
@@ -47,5 +48,10 @@ module.exports = (els) => {
 }
 
 function setCurrentLocationOnMap(location) {
-
+  current_location_marker = new google.maps.Marker({
+    position: location,
+    map: map,
+    title: "You are here",
+    draggable: false
+  });
 }
