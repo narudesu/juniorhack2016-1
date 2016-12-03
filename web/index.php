@@ -61,11 +61,19 @@
                     <h1>Pricing</h1>
                     <ul>
                         <li>Bike rental fee - 5€</li>
-                        
+                        <li>First hour - 2€</li>
+                        <li>Next hour - 4€</li>
                     </ul>
                 </div>
                 <div>
-
+                    <h1>Rental plans</h1>
+                    <ul>
+                        <li>2 hours - 5€</li>
+                        <li>4 hours - 10€</li>
+                        <li>6 hours - 15€</li>
+                        <li>8 hours - 20€</li>
+                        <li>30 minute fee - 3€</li>
+                    </ul>
                 </div>
             </div>
         </div>
