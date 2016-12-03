@@ -34,7 +34,7 @@
             <li><a href="#creators">Creators</a></li>
         </ul>
         <span style="float: right">
-            <button type="button" style="">
+            <button type="button" style="border: none; height: 30px; font-size: 15px; margin: 5px 10px ; padding: 5px 20px; vertical-align: middle; border-radius: 5px; background-color: #333333;color: white">
                 LOGIN
             </button>
         </span>
@@ -103,6 +103,7 @@
         <p style="float: right;">* For every half hour spent after plan due</p>
     </div>
 </section>
+<!-- HERE IS A SPACE FOR THE MAP -->
 <section class="creators" id="creators">
     <div class="container">
         <div class="row">
