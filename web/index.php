@@ -66,7 +66,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="imageabout">
-                    <img src="Photos/bike_rental.jpg" height="400px" style="border-radius: 10px">
+                    <img class="hidden-xs" src="Photos/bike_rental.jpg" height="400px" style="border-radius: 10px">
                 </div>
             </div>
         </div>
