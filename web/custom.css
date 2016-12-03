@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i&subset=latin-ext');
+body{
+    font-family: 'Roboto';
+}
+#menu{
+    background-color:#fc0421;
+}
+a.navbar-brand{
+    color: #ffffff !important;
+}
+span.gray{
+    color: #333333 !important;
+}
+span.red{
+    color: #fc0421 !important;
+}
+nav{
+    font-weight: 700;
+    font-size: 20px !important;
+}
+li > a{
+    color: #ffffff !important;
+}
+.imagecentered{
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    background-image: url(http://placehold.it/1920x300);
+    background-position: center;
+    background-size: cover;
+}
+.imageabout{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.about{
+    background-color: #333333;
+    color: white;
+}
