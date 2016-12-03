@@ -1,4 +1,3 @@
-const $ = require('jquery')
 
 let current_location = {lat: 55.2, lng: 16.63}
 let init_done = false
@@ -16,16 +15,19 @@ $.getJSON('http://localhost:3000/docks/')
   .done(docks => {
     console.log('docks', docks)
     dock_markers = docks.map(dock => {
-      console.log('xx',{
+      let marker = new google.maps.Marker({
         position: dock.location,
         map: map,
         label: dock.dockID
       })
-      return new google.maps.Marker({
-        position: dock.location,
-        map: map,
-        label: dock.dockID
+      const $modal = $('#modal-info')
+      google.maps.event.addListener(marker, 'click', () => {
+        // alert(dock.dockID)
+        $modal.modal('show')
+        $modal.find('.modal-title').html('Dock ' + dock.dockID)
+        $content = $modal.find('.modal-body > p')
       })
+      return marker
     })
   })
 
