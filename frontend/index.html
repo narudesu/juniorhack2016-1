@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
 
-    <style>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
     #mapsection {
       background-color: #ffca00;
       min-height: 500px;
       width: 100%;
     }
+
     #bike-finder {
-      background-color: #ca00ff;
+      background-color: #dadadc;
       min-height: 200px;
       transition: all 1s ease-in-out;
     }
+
     #bike-finder-map {
       height: 200px;
       width: 100%;
@@ -26,22 +36,59 @@
 
     .absrender {
       position: absolute;
-
     }
-    </style>
-  </head>
-  <body>
-    <section id="mapsection">
-      <h2>Get kolo</h2>
-      <button id="btn-kolo">Kolo</button>
-      <div id="bike-finder" class="collapsed absrender">
-        <div id="bike-finder-map"></div>
+  </style>
+</head>
+
+<body>
+  <section id="mapsection">
+    <h2>Get kolo</h2>
+    <button id="btn-kolo">Kolo</button>
+    <div id="bike-finder" class="collapsed absrender">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="bike-finder-map"></div>
+        </div>
+        <div class="col-md-6">
+          <table id="bike-finder-table" class="table">
+            <tr>
+              <th>ID</th>
+              <th>Distance</th>
+              <th>Slots</th>
+            </tr>
+          </table>
+        </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos minima voluptates accusantium praesentium molestias porro vero vitae, laboriosam eligendi?</p>
-    </section>
-    <script src="bundle.js" charset="utf-8"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMF80Huw9L2opo5Qs_6YU4Sh1a8W6SXCU&callback=initMap">
-    </script>
-  </body>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos minima voluptates accusantium praesentium molestias porro vero vitae, laboriosam eligendi?</p>
+  </section>
+  <div id="modal-info" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            Distance from user: <span class="distance-from-user"></span>
+            Rental fee: <span class="rental-fee"></span>
+            Slot state:
+            <button>Rent</button>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="bundle.js" charset="utf-8"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMF80Huw9L2opo5Qs_6YU4Sh1a8W6SXCU&callback=initMap">
+  </script>
+</body>
+
 </html>
