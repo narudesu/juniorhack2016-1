@@ -27,7 +27,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Smarti<span class="gray">ZEN</span></a>
         </div>
-        <ul class="nav navbar-nav" style="text-align: center; margin-left: 27.5%">
+        <ul class="nav navbar-nav" style="text-align: center; margin-left: 20vw">
             <li><a href="#top">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#rent">Rent a bike</a></li>
@@ -46,7 +46,7 @@
 <section class="about" id="about">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-6">
                 <h1 class="X300" style="color: #fc0421;">About SmartiZEN</h1>
                 <h3 class="X500">With Smarti<span style class="red">ZEN</span> renting a bike could not be easier.<br> This simple yet efficent solution allows you to <br><span style class="red">rent a bike</span> from across the city and ride it to your desired location.</h3>
                 <ul class="X500">
@@ -56,7 +56,7 @@
                     <li>5€ per bike</li>
                 </ul>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="imageabout">
                     <img src="Photos/bike_rental.jpg" height="400px" style="border-radius: 10px">
                 </div>

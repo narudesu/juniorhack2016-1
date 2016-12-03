@@ -1,6 +1,6 @@
 <?php
 function makeCard($fotka, $jmeno, $prijmeni, $post, $mail, $facebook){
-    return'<div class="col-lg-6 card">
+    return'<div class="col-lg-6 col-md-12 card">
                 <div class="photo">
                     <img src="'.$fotka.'">
                 </div>
