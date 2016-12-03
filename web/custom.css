@@ -75,6 +75,9 @@ li > a{
 .X500 {
     font-weight: 500;
 }
+.X700 {
+    font-weight: 700;
+}
 ul{
     font-size: 20px;
     margin-left: -20px;

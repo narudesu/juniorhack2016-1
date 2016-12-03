@@ -27,12 +27,17 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Smarti<span class="gray">ZEN</span></a>
         </div>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" style="text-align: center; margin-left: 27.5%">
             <li><a href="#top">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#rent">Rent a bike</a></li>
             <li><a href="#creators">Creators</a></li>
         </ul>
+        <span style="float: right">
+            <button type="button" style="">
+                LOGIN
+            </button>
+        </span>
     </div>
 </nav>
 <section class="top" id="top">
@@ -42,7 +47,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <h1 class="X300">About SmartiZEN</h1>
+                <h1 class="X300" style="color: #fc0421;">About SmartiZEN</h1>
                 <h3 class="X500">With Smarti<span style class="red">ZEN</span> renting a bike could not be easier.<br> This simple yet efficent solution allows you to <br><span style class="red">rent a bike</span> from across the city and ride it to your desired location.</h3>
                 <ul class="X500">
                     <li>Rent a bike for up to 8 hours</li>
@@ -63,9 +68,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h1  class="X300" style="color: #333333">Request a bike</h1>
-                <p class="X500">Request a bike either from your computer or a mobile phone and receive nearest station location.
-                When you are finished with your ride, just park it at the nearest station.</p>
+                <div>
+                    <h1  class="X300" style="color: #333333">Request a bike</h1>
+                    <p class="X500">Request a bike either from your computer or a mobile phone and receive nearest station location.
+                        When you are finished with your ride, just park it at the nearest station.</p>
+                </div>
+                <div>
+                    <button class="rentButton X700" style="margin-top: 80px">REQUEST A BIKE</button>
+                </div>
             </div>
             <div class="col-lg-6">
                 <div>
@@ -89,9 +99,6 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-5">
-                <button class="rentButton">REQUEST A BIKE</button>
-            </div>
         </div>
         <p style="float: right;">* For every half hour spent after plan due</p>
     </div>
