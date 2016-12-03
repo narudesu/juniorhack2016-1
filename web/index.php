@@ -1,3 +1,4 @@
+<?php require_once 'functions.php' ?>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -6,28 +7,38 @@
     <title>Wepčí</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-default" id="menu" style="margin-bottom: 0px;">
+<script type="text/javascript">
+    $(document).on('click', 'a', function(event){
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+    });
+</script>
+<nav class="navbar navbar-default navbar-fixed-top" id="menu" style="margin-bottom: 0px;">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Smarti<span class="gray">ZEN</span></a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rent">Rent a bike</a></li>
+            <li><a href="#creators">Creators</a></li>
         </ul>
     </div>
 </nav>
-<section class="top">
+<section class="top" id="top">
     <div class="imagecentered"></div>
 </section>
-<section class="about">
+<section class="about" id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -48,7 +59,7 @@
         </div>
     </div>
 </section>
-<section class="rent">
+<section class="rent" id="rent">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -78,73 +89,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <button>IM USELESS PLZ</button>
+            <div class="col-lg-5">
+                <button class="rentButton">REQUEST A BIKE</button>
             </div>
         </div>
+        <p style="float: right;">* For every half hour spent after plan due</p>
     </div>
 </section>
-<section class="creators">
+<section class="creators" id="creators">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
+            <h1>About the creators</h1>
+            <?php
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            ?>
         </div>
     </div>
 </section>

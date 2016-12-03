@@ -7,6 +7,7 @@ body{
 }
 a.navbar-brand{
     color: #ffffff !important;
+    font-size: 20px !important;
 }
 span.gray{
     color: #333333 !important;
@@ -38,9 +39,33 @@ li > a{
     background-color: #333333;
     color: white;
 }
+.rent{
+    background-color: #fc0421;
+    color: white !important;
+}
+.creators{
+    background-color: #333333;
+    color: white !important;
+}
 .photo{
     float: left;
 }
 .crea_content{
     float: left;
+    margin-left: 15px;
+}
+.rentButton{
+    background-color: #333333;
+    border: none;
+    padding: 30px 40px;
+    font-size: 40px;
+    border-radius: 15px;
+    margin: 10px;
+}
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.top{
+    text-align: center;
 }
