@@ -77,7 +77,79 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <button>IM USELESS PLZ</button>
+            </div>
+        </div>
     </div>
 </section>
+<section class="creators">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="koudelka" style="background-color: black; width: 100%; height: 50px"></div>
+</footer>
 </body>
 </html>

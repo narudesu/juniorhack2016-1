@@ -38,3 +38,9 @@ li > a{
     background-color: #333333;
     color: white;
 }
+.photo{
+    float: left;
+}
+.crea_content{
+    float: left;
+}
