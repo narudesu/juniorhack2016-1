@@ -38,9 +38,25 @@ li > a{
     background-color: #333333;
     color: white;
 }
+.rent{
+    background-color: #fc0421;
+    color: white !important;
+}
+.creators{
+    background-color: #333333;
+    color: white !important;
+}
 .photo{
     float: left;
 }
 .crea_content{
     float: left;
+}
+.rentButton{
+    background-color: #333333;
+    border: none;
+    padding: 30px 40px;
+    font-size: 40px;
+    border-radius: 15px;
+    margin: 10px;
 }

@@ -78,8 +78,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3">
-                <button>IM USELESS PLZ</button>
+            <div class="col-lg-5">
+                <button class="rentButton">REQUEST A BIKE</button>
             </div>
         </div>
     </div>
@@ -87,6 +87,7 @@
 <section class="creators">
     <div class="container">
         <div class="row">
+            <h1>About the creators</h1>
             <div class="col-lg-6">
                 <div class="photo">
                     <img src="http://placehold.it/200x200">
