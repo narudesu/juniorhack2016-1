@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#333333</color>
+    <color name="colorPrimaryDark">#222</color>
+    <color name="colorAccent">#fc0421</color>
+    <style name="CustomTheme" parent="android:Theme.Light">
+        <item name="android:windowBackground">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorAccent</item>
+    </style>
+</resources>
