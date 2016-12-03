@@ -82,8 +82,6 @@ function getSlotState() {
   })
 }
 
-
-
 app.get('/init', (req, res) => {
   console.log('got arduino msg', req.query)
   let parsed = parseInit(req.query)
@@ -91,22 +89,16 @@ app.get('/init', (req, res) => {
     .then(x => {
       res.send('Hellou')
       updateSlots(parsed.dockID, parsed.slots)
+      getSlotState()
     })
     .catch(x => {
       res.send('You are evil')
     })
 })
 
-app.get('/inid', (req, res) => {
-  let slots = [
-    { state: 'available', order: 0 },
-    { state: 'available', order: 1 },
-    { state: 'available', order: 2 },
-    { state: 'available', order: 3 },
-    { state: 'available', order: 4 }
-  ]
-
-
+app.get('/mylocation', (req, res) => {
+  console.log('user fetches location', req.ip)
 })
+
 
 app.listen(3000, () => {console.log('Listening on 3000')})
