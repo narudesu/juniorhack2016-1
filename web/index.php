@@ -25,19 +25,27 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="menu" style="margin-bottom: 0px;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Smarti<span class="gray">ZEN</span></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#top">Smarti<span class="gray">ZEN</span></a>
         </div>
-        <ul class="nav navbar-nav" style="text-align: center; margin-left: 20vw">
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#rent">Rent a bike</a></li>
-            <li><a href="#creators">Creators</a></li>
-        </ul>
-        <span style="float: right">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" style="text-align: center; margin-left: 20vw">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rent">Rent a bike</a></li>
+                <li><a href="#creators">Creators</a></li>
+            </ul>
+            <span style="float: right">
             <button type="button" style="border: none; height: 30px; font-size: 15px; margin: 5px 10px ; padding: 5px 20px; vertical-align: middle; border-radius: 5px; background-color: #333333;color: white">
                 LOGIN
             </button>
         </span>
+        </div>
     </div>
 </nav>
 <section class="top" id="top">
