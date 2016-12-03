@@ -1,4 +1,4 @@
-<?php require_once 'functions.php' ?>
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -165,79 +165,66 @@
         <div class="row">
             <h1  class="X300">About the creators</h1>
             <div class="col-lg-6 col-md-12 card col-xs-12">
-                        <div class="photo">
-                            <img src="http://placehold.it/200x200">
-                        </div>
-                        <div class="crea_content">
-                            <h5>Dominik <span class="lastname">Kadera</span></h5>
-                            <h6></h6>
-                            <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"></p>
-                            <p><img src="Photos/1480739674_gmail.png"  height="32px"></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 card col-xs-12">
-                                <div class="photo">
-                                    <img src="http://placehold.it/200x200">
-                                </div>
-                                <div class="crea_content">
-                                    <h5>Vojtech <span class="lastname">Bohm</span></h5>
-                                    <h6>'.$post.'</h6>
-                                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> '.$facebook.'</p>
-                                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> '.$mail.'</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 card col-xs-12">
-                                        <div class="photo">
-                                            <img src="http://placehold.it/200x200">
-                                        </div>
-                                        <div class="crea_content">
-                                            <h5>'.$jmeno.' <span class="lastname">'.$prijmeni.'</span></h5>
-                                            <h6>'.$post.'</h6>
-                                            <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> '.$facebook.'</p>
-                                            <p><img src="Photos/1480739674_gmail.png"  height="32px"> '.$mail.'</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 card col-xs-12">
-                                                <div class="photo">
-                                                    <img src="http://placehold.it/200x200">
-                                                </div>
-                                                <div class="crea_content">
-                                                    <h5>'.$jmeno.' <span class="lastname">'.$prijmeni.'</span></h5>
-                                                    <h6>'.$post.'</h6>
-                                                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> '.$facebook.'</p>
-                                                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> '.$mail.'</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-12 card col-xs-12">
-                                                        <div class="photo">
-                                                            <img src="http://placehold.it/200x200">
-                                                        </div>
-                                                        <div class="crea_content">
-                                                            <h5>'.$jmeno.' <span class="lastname">'.$prijmeni.'</span></h5>
-                                                            <h6>'.$post.'</h6>
-                                                            <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> '.$facebook.'</p>
-                                                            <p><img src="Photos/1480739674_gmail.png"  height="32px"> '.$mail.'</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-12 card col-xs-12">
-                                                                <div class="photo">
-                                                                    <img src="http://placehold.it/200x200">
-                                                                </div>
-                                                                <div class="crea_content">
-                                                                    <h5>'.$jmeno.' <span class="lastname">'.$prijmeni.'</span></h5>
-                                                                    <h6>'.$post.'</h6>
-                                                                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> '.$facebook.'</p>
-                                                                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> '.$mail.'</p>
-                                                                </div>
-                                                            </div>
-            <?php
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","Leader, Hardware, Automatization","me@domiz.cz","facebook.com/dominik.kadera");
-            echo makeCard("http://placehold.it/200x200","Vojtěch","Böhm","Graphic design & Front-end development","vojta.bohm@gmail.com","facebook.com/vojta.bohm");
-            echo makeCard("http://placehold.it/200x200","Matěj","Šmíd","Database Management, Full-stack web development","facebook","narudesu@yahoo.com");
-            echo makeCard("http://placehold.it/200x200","Jan","Šoulák","Hardware, communication","mejlik","facebook");
-            echo makeCard("http://placehold.it/200x200","František","Běhal","Android deployment","mejlik","facebook");
-            echo makeCard("http://placehold.it/200x200","David","Baňař","Hardware","mejlik","facebook");
-            ?>
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik <span class="lastname">Kadera</span></h5>
+                    <h6>Leader, Hardware, Automatization</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook.com/dominik.kadera</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> me@domiz.cz</p>
+                </div>
+            </div><div class="col-lg-6 col-md-12 card col-xs-12">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Vojtěch <span class="lastname">Böhm</span></h5>
+                    <h6>Graphic design & Front-end development</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook.com/vojta.bohm</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> vojta.bohm@gmail.com</p>
+                </div>
+            </div><div class="col-lg-6 col-md-12 card col-xs-12">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Matěj <span class="lastname">Šmíd</span></h5>
+                    <h6>Database Management, Front & Back-end development</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> mejlik</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> facebook</p>
+                </div>
+            </div><div class="col-lg-6 col-md-12 card col-xs-12">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Jan <span class="lastname">Šoulák</span></h5>
+                    <h6>Hardware, communication</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                </div>
+            </div><div class="col-lg-6 col-md-12 card col-xs-12">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>František <span class="lastname">Běhal</span></h5>
+                    <h6>Android deployment</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                </div>
+            </div><div class="col-lg-6 col-md-12 card col-xs-12">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>David <span class="lastname">Baňař</span></h5>
+                    <h6>Hardware</h6>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
