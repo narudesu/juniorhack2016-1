@@ -6,6 +6,63 @@ let collapsed = true
 let current_location_marker
 let dock_markers
 
+let directionsService
+let directionsDisplay
+
+let total_directions
+let calculated_directions
+
+function calculateRoute(locA, locB) {
+  return new Promise((resolve, reject) => {
+    directionsService.route({
+      origin: locA,
+      destination: locB,
+      travelMode: 'DRIVING'
+    }, (res, status) => {
+      calculated_directions += 1
+      if (status === 'OK')
+      resolve(res.routes[0].legs[0].distance)
+      // directionsDisplay.setDirections(res)
+      else
+      reject('status ' + status)
+    })
+  })
+}
+
+function refillSlotsData() {
+  $.getJSON('http://localhost:3000/docks/')
+    .done(docks => {
+      docks.forEach(dock => {
+        let free_spots = dock.slots.reduce((s, n) => {
+          if (n.state === 'available') s+=1
+          // console.log(n, s)
+          return s
+        }, 0)
+        console.log('should render', free_spots)
+        $(`td[data-dock-id=${dock.dockID}]`).html(free_spots)
+      })
+    })
+  setTimeout(refillSlotsData, 2000)
+}
+
+function renderTable() {
+  if (calculated_directions === total_directions) {
+    let rows = dock_markers.map(marker => {
+      let free_spots = marker.slots.reduce((s, n) => {
+        if (n.state === 'available') s+=1
+        // console.log(n, s)
+        return s
+      }, 0)
+      return `<tr><td>${marker.dockID}</td><td>${marker.dist.text}</td><td class="free-spots-column" data-dock-id="${marker.dockID}">${free_spots}</td></tr>`
+    })
+    console.log(rows)
+    rows.forEach(row => {
+      $('#bike-finder-table').append(row)
+    })
+    refillSlotsData()
+  }
+}
+
 $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
   .done(location => {
     handlePosition(location)
@@ -14,12 +71,22 @@ $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
 $.getJSON('http://localhost:3000/docks/')
   .done(docks => {
     console.log('docks', docks)
+    total_directions = docks.length
+    calculated_directions = 0
     dock_markers = docks.map(dock => {
       let marker = new google.maps.Marker({
         position: dock.location,
         map: map,
         label: dock.dockID
       })
+      calculateRoute(current_location, dock.location).then(dist => {
+        console.log(dist)
+        marker.dist = dist
+        marker.slots = dock.slots
+        marker.dockID = dock.dockID
+        renderTable()
+      });
+
       const $modal = $('#modal-info')
       google.maps.event.addListener(marker, 'click', () => {
         // alert(dock.dockID)
@@ -35,6 +102,7 @@ function handlePosition(pos) {
   console.log('got pos', pos)
   current_location.lat = pos.latitude
   current_location.lng = pos.longitude
+
   if (init_done) setCurrentLocationOnMap(current_location, true)
 }
 
@@ -61,7 +129,11 @@ module.exports = (els) => {
         center: current_location
       });
 
+      directionsService = new google.maps.DirectionsService
+      directionsDisplay = new google.maps.DirectionsRenderer
+
       console.log(map)
+      directionsDisplay.setMap(map)
 
       init_done = true
       setCurrentLocationOnMap(current_location)

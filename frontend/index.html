@@ -20,7 +20,7 @@
     }
 
     #bike-finder {
-      background-color: #ca00ff;
+      background-color: #dadadc;
       min-height: 200px;
       transition: all 1s ease-in-out;
     }
@@ -45,7 +45,20 @@
     <h2>Get kolo</h2>
     <button id="btn-kolo">Kolo</button>
     <div id="bike-finder" class="collapsed absrender">
-      <div id="bike-finder-map"></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="bike-finder-map"></div>
+        </div>
+        <div class="col-md-6">
+          <table id="bike-finder-table" class="table">
+            <tr>
+              <th>ID</th>
+              <th>Distance</th>
+              <th>Slots</th>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos minima voluptates accusantium praesentium molestias porro vero vitae, laboriosam eligendi?</p>
   </section>
@@ -62,7 +75,7 @@
           <p>
             Distance from user: <span class="distance-from-user"></span>
             Rental fee: <span class="rental-fee"></span>
-            
+            Slot state:
             <button>Rent</button>
           </p>
         </div>
