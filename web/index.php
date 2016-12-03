@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="imageabout">
-                    <img src="http://placehold.it/400x400" style="border-radius: 5px">
+                    <img src="Photos/bike_rental.jpg" height="400px" style="border-radius: 5px">
                 </div>
             </div>
         </div>
@@ -101,12 +101,12 @@
         <div class="row">
             <h1>About the creators</h1>
             <?php
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
-            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","CODER","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Dominik","Kadera","Leader, Hardware, Automatization","me@domiz.cz","facebook.com/dominik.kadera");
+            echo makeCard("http://placehold.it/200x200","Vojtěch","Böhm","Graphic design & Front-end development","vojta.bohm@gmail.com","facebook.com/vojta.bohm");
+            echo makeCard("http://placehold.it/200x200","Matěj","Šmíd","Database Management, Front & Back-end development","facebook","mejlik");
+            echo makeCard("http://placehold.it/200x200","Jan","Šoulák","Hardware, communication","mejlik","facebook");
+            echo makeCard("http://placehold.it/200x200","František","Běhal","Android deployment","mejlik","facebook");
+            echo makeCard("http://placehold.it/200x200","David","Baňař","Hardware","mejlik","facebook");
             ?>
         </div>
     </div>
