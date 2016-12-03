@@ -13,7 +13,7 @@
     android:background="@color/colorAccent">
 
     <Button
-        android:text="LOAD STATES"
+        android:text="OPEN SMARTIZEN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
@@ -25,5 +25,17 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:text="An innovative way to travel the city!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textColorLink="@android:color/white"
+        android:textColor="@android:color/background_light"
+        tools:textSize="48px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
