@@ -17,10 +17,11 @@ span.red{
 }
 nav{
     font-weight: 700;
-    font-size: 20px !important;
+    font-size: 30px !important;
 }
 li > a{
     color: #ffffff !important;
+    text-transform: uppercase;
 }
 .imagecentered{
     text-align: center;
@@ -33,7 +34,6 @@ li > a{
 .imageabout{
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
 .about{
     background-color: #333333;
@@ -69,6 +69,16 @@ li > a{
 .top{
     text-align: center;
 }
-section{
+.X300{
     font-weight: 300;
+}
+.X500 {
+    font-weight: 500;
+}
+ul{
+    font-size: 20px;
+    margin-left: -20px;
+}
+p{
+    font-size: 20px;
 }
