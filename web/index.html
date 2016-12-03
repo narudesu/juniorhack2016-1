@@ -109,7 +109,7 @@
                         When you are finished with your ride, just park it at the nearest station.</p>
                 </div>
                 <div>
-                    <button class="rentButton X700" style="margin-top: 80px">REQUEST A BIKE</button>
+                    <button id="btn-kolo" class="rentButton X700" style="margin-top: 80px">REQUEST A BIKE</button>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -138,10 +138,7 @@
         <p style="float: right;">* For every half hour spent after plan due</p>
     </div>
 </section>
-<section id="mapsection">
-  <h2>Get kolo</h2>
-  <button id="btn-kolo">Kolo</button>
-  <div id="bike-finder" class="collapsed absrender">
+<section id="bike-finder" class="collapsed absrender">
     <div class="row">
       <div class="col-md-6">
         <div id="bike-finder-map"></div>
@@ -156,8 +153,6 @@
         </table>
       </div>
     </div>
-  </div>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos minima voluptates accusantium praesentium molestias porro vero vitae, laboriosam eligendi?</p>
 </section>
 <!-- HERE IS A SPACE FOR THE MAP -->
 <section class="creators" id="creators">
@@ -166,7 +161,7 @@
             <h1  class="X300">About the creators</h1>
             <div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="dominik.jpg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>Dominik <span class="lastname">Kadera</span></h5>
@@ -176,7 +171,7 @@
                 </div>
             </div><div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="vojta.jpg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>Vojtěch <span class="lastname">Böhm</span></h5>
@@ -186,43 +181,43 @@
                 </div>
             </div><div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="ich.jpeg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>Matěj <span class="lastname">Šmíd</span></h5>
                     <h6>Database Management, Front & Back-end development</h6>
-                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> mejlik</p>
-                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> facebook</p>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> </p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> narudesu@yahoo.com</p>
                 </div>
             </div><div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="unnamed.jpg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>Jan <span class="lastname">Šoulák</span></h5>
                     <h6>Hardware, communication</h6>
-                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
-                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> </p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> </p>
                 </div>
             </div><div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="franta.jpg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>František <span class="lastname">Běhal</span></h5>
                     <h6>Android deployment</h6>
-                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
-                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> </p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> </p>
                 </div>
             </div><div class="col-lg-6 col-md-12 card col-xs-12">
                 <div class="photo">
-                    <img src="http://placehold.it/200x200">
+                    <img src="david.jpg" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="crea_content">
                     <h5>David <span class="lastname">Baňař</span></h5>
                     <h6>Hardware</h6>
-                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> facebook</p>
-                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> mejlik</p>
+                    <p><img src="Photos/1480739606_social-facebook-square2.png" height="32px"> panbany</p>
+                    <p><img src="Photos/1480739674_gmail.png"  height="32px"> nobrainsense@email.cz</p>
                 </div>
             </div>
         </div>
@@ -255,6 +250,8 @@
 
     </div>
   </div>
+  <script src="bundle.js" charset="utf-8"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMF80Huw9L2opo5Qs_6YU4Sh1a8W6SXCU&callback=initMap"></script
 
 </body>
 </html>

@@ -102,7 +102,8 @@ $.getJSON(server_url + 'docks/')
       let marker = new google.maps.Marker({
         position: dock.location,
         map: map,
-        label: dock.dockID
+        label: dock.dockID,
+        icon: 'Icon.png'
       })
       calculateRoute(current_location, dock.location).then(dist => {
         console.log(dist)
@@ -156,6 +157,7 @@ module.exports = (els) => {
 
       directionsService = new google.maps.DirectionsService
       directionsDisplay = new google.maps.DirectionsRenderer
+                <ul class="X500">
 
       console.log(map)
       directionsDisplay.setMap(map)
@@ -172,8 +174,8 @@ function setCurrentLocationOnMap(location, move) {
       position: location,
       map: map,
       title: "You are here",
-      label: 'you',
-      draggable: true
+      draggable: true,
+      icon: 'IconHuman.png'
     })
     google.maps.event.addListener(current_location_marker, 'dragend', (e) => {
       console.log('dragend', e)
