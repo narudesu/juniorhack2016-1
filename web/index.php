@@ -82,42 +82,25 @@
                 <button class="rentButton">REQUEST A BIKE</button>
             </div>
         </div>
+        <p style="float: right;">* For every half hour spent after plan due</p>
     </div>
 </section>
 <section class="creators">
     <div class="container">
         <div class="row">
             <h1>About the creators</h1>
-            <div class="col-lg-6">
+            <div class="col-lg-6 card">
                 <div class="photo">
                     <img src="http://placehold.it/200x200">
                 </div>
                 <div class="crea_content">
                     <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
+                    <h6>Leader, Hardware, Automatization</h6>
+                    <p>facenboook tady</p>
+                    <p>ymeeeeejl tady</p>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="photo">
-                    <img src="http://placehold.it/200x200">
-                </div>
-                <div class="crea_content">
-                    <h5>Dominik Kadera</h5>
-                    <p>Yup. It's me who's now coding this website.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 card">
                 <div class="photo">
                     <img src="http://placehold.it/200x200">
                 </div>
@@ -128,7 +111,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 card">
                 <div class="photo">
                     <img src="http://placehold.it/200x200">
                 </div>
@@ -137,7 +120,7 @@
                     <p>Yup. It's me who's now coding this website.</p>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 card">
                 <div class="photo">
                     <img src="http://placehold.it/200x200">
                 </div>
@@ -147,6 +130,27 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6 card">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 card">
+                <div class="photo">
+                    <img src="http://placehold.it/200x200">
+                </div>
+                <div class="crea_content">
+                    <h5>Dominik Kadera</h5>
+                    <p>Yup. It's me who's now coding this website.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 <footer>

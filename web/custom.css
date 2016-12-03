@@ -51,6 +51,7 @@ li > a{
 }
 .crea_content{
     float: left;
+    margin-left: 15px;
 }
 .rentButton{
     background-color: #333333;
@@ -59,4 +60,8 @@ li > a{
     font-size: 40px;
     border-radius: 15px;
     margin: 10px;
+}
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
