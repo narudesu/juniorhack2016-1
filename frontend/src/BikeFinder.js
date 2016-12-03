@@ -1,21 +1,39 @@
 const $ = require('jquery')
 
-let current_location = {lat: 55.2, lng: 16.63} // TODO: implement getting location from server
+let current_location = {lat: 55.2, lng: 16.63}
 let init_done = false
 let map
 let collapsed = true
 let current_location_marker
+let dock_markers
 
 $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
   .done(location => {
     handlePosition(location)
   })
 
+$.getJSON('http://localhost:3000/docks/')
+  .done(docks => {
+    console.log('docks', docks)
+    dock_markers = docks.map(dock => {
+      console.log('xx',{
+        position: dock.location,
+        map: map,
+        label: dock.dockID
+      })
+      return new google.maps.Marker({
+        position: dock.location,
+        map: map,
+        label: dock.dockID
+      })
+    })
+  })
+
 function handlePosition(pos) {
   console.log('got pos', pos)
   current_location.lat = pos.latitude
   current_location.lng = pos.longitude
-  if (init_done) setCurrentLocationOnMap(current_location)
+  if (init_done) setCurrentLocationOnMap(current_location, true)
 }
 
 module.exports = (els) => {
@@ -49,16 +67,21 @@ module.exports = (els) => {
   }
 }
 
-function setCurrentLocationOnMap(location) {
+function setCurrentLocationOnMap(location, move) {
   if (!current_location_marker)
     current_location_marker = new google.maps.Marker({
       position: location,
       map: map,
       title: "You are here",
-      draggable: false
+      label: 'you',
+      draggable: true
     });
   else
     current_location_marker.setPosition(
       location
     )
+
+  // google.maps.event.trigger(map, "resize");
+  map.panTo(location)
+  // map.setZoom(14);
 }
