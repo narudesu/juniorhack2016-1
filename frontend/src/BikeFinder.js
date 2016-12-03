@@ -1,20 +1,22 @@
 const $ = require('jquery')
 
-let current_location = {lat: 49.2, lng: 16.63} // TODO: implement getting location from server
+let current_location = {lat: 55.2, lng: 16.63} // TODO: implement getting location from server
 let init_done = false
 let map
 let collapsed = true
 let current_location_marker
 
+$.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
+  .done(location => {
+    handlePosition(location)
+  })
+
 function handlePosition(pos) {
   console.log('got pos', pos)
-  current_location.lat = pos.coords.latitude
-  current_location.lng = pos.coords.longitude
+  current_location.lat = pos.latitude
+  current_location.lng = pos.longitude
   if (init_done) setCurrentLocationOnMap(current_location)
 }
-
-navigator.geolocation.getCurrentPosition(handlePosition)
-navigator.geolocation.watchPosition(handlePosition)
 
 module.exports = (els) => {
   const $container = $(els.element)
@@ -48,10 +50,15 @@ module.exports = (els) => {
 }
 
 function setCurrentLocationOnMap(location) {
-  current_location_marker = new google.maps.Marker({
-    position: location,
-    map: map,
-    title: "You are here",
-    draggable: false
-  });
+  if (!current_location_marker)
+    current_location_marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: "You are here",
+      draggable: false
+    });
+  else
+    current_location_marker.setPosition(
+      location
+    )
 }
