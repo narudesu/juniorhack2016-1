@@ -1,4 +1,6 @@
 
+const server_url = 'http://192.168.133.192:3000/'
+
 let current_location = {lat: 55.2, lng: 16.63}
 let init_done = false
 let map
@@ -9,10 +11,13 @@ let dock_markers
 let directionsService
 let directionsDisplay
 
+let ordered_magic = []
+
 let total_directions
 let calculated_directions
 
 function calculateRoute(locA, locB) {
+  console.log('locab', locA, locB)
   return new Promise((resolve, reject) => {
     directionsService.route({
       origin: locA,
@@ -29,8 +34,27 @@ function calculateRoute(locA, locB) {
   })
 }
 
+function calculateRoutes(locA, locs) {
+  console.log(locs)
+  return new Promise((resolve, reject) => {
+    Promise.all(locs.map(loc => calculateRoute(locA, loc)))
+      .then(distances => {
+        console.log('distances', distances)
+        resolve(distances)
+      })
+
+  })
+}
+
+function refillDistancesData(distances) {
+  console.log('ddd', distances)
+  distances.forEach((distance, i) => {
+    $(`tr[data-dock-id=${ordered_magic[i]}]`).find('.distance-column').html(distance.text)
+  })
+}
+
 function refillSlotsData() {
-  $.getJSON('http://localhost:3000/docks/')
+  $.getJSON(server_url + 'docks/')
     .done(docks => {
       docks.forEach(dock => {
         let free_spots = dock.slots.reduce((s, n) => {
@@ -38,8 +62,8 @@ function refillSlotsData() {
           // console.log(n, s)
           return s
         }, 0)
-        console.log('should render', free_spots)
-        $(`td[data-dock-id=${dock.dockID}]`).html(free_spots)
+        // console.log('should render', free_spots)
+        $(`tr[data-dock-id=${dock.dockID}]`).find('.free-spots-column').html(free_spots)
       })
     })
   setTimeout(refillSlotsData, 2000)
@@ -48,12 +72,13 @@ function refillSlotsData() {
 function renderTable() {
   if (calculated_directions === total_directions) {
     let rows = dock_markers.map(marker => {
+      ordered_magic.push(marker.dockID)
       let free_spots = marker.slots.reduce((s, n) => {
         if (n.state === 'available') s+=1
         // console.log(n, s)
         return s
       }, 0)
-      return `<tr><td>${marker.dockID}</td><td>${marker.dist.text}</td><td class="free-spots-column" data-dock-id="${marker.dockID}">${free_spots}</td></tr>`
+      return `<tr data-dock-id="${marker.dockID}"><td>${marker.dockID}</td><td class="distance-column">${marker.dist.text}</td><td class="free-spots-column">${free_spots}</td></tr>`
     })
     console.log(rows)
     rows.forEach(row => {
@@ -68,7 +93,7 @@ $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
     handlePosition(location)
   })
 
-$.getJSON('http://localhost:3000/docks/')
+$.getJSON(server_url + 'docks/')
   .done(docks => {
     console.log('docks', docks)
     total_directions = docks.length
@@ -142,14 +167,27 @@ module.exports = (els) => {
 }
 
 function setCurrentLocationOnMap(location, move) {
-  if (!current_location_marker)
+  if (!current_location_marker) {
     current_location_marker = new google.maps.Marker({
       position: location,
       map: map,
       title: "You are here",
       label: 'you',
       draggable: true
-    });
+    })
+    google.maps.event.addListener(current_location_marker, 'dragend', (e) => {
+      console.log('dragend', e)
+      current_location = {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      }
+      calculateRoutes(current_location, dock_markers.map(marker => marker.position))
+        .then(distances => {
+          refillDistancesData(distances)
+        })
+      console.log(current_location)
+    })
+  }
   else
     current_location_marker.setPosition(
       location

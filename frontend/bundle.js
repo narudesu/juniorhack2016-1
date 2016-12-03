@@ -42,9 +42,19 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	
+	'use strict';
+
+	var bike_finder = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./BikeFinder\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))({
+	  show_button: '#btn-kolo',
+	  element: '#bike-finder',
+	  map: '#bike-finder-map'
+	});
+
+	window.initMap = function () {
+	  bike_finder.initMap();
+	};
 
 /***/ }
 /******/ ]);
