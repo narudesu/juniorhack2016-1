@@ -18,8 +18,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/docks', (req, res) => {
-  collection.find({}).toArray((err, doc) => {
-    console.log('bh', doc)
+  res.header('Access-Control-Allow-Origin', '*')
+  collection.find({}, {secret: false, _id: false}).toArray((err, docs) => {
+    setTimeout(() => {
+      res.json(docs)
+    }, 1000)
   })
 })
 
@@ -96,9 +99,7 @@ app.get('/init', (req, res) => {
     })
 })
 
-app.get('/mylocation', (req, res) => {
-  console.log('user fetches location', req.ip)
-})
+
 
 
 app.listen(3000, () => {console.log('Listening on 3000')})
